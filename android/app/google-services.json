@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "626925638616",
+    "project_id": "chatapp-bijog",
+    "storage_bucket": "chatapp-bijog.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626925638616:android:9ce895819e249a9b1158ad",
+        "android_client_info": {
+          "package_name": "com.example.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnLsCleTG5rd2GIcGpfS2IfNcpHxZQBmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
