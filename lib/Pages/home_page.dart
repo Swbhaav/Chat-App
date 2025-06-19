@@ -28,6 +28,8 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  //build individual list title for user
+
   //Build the list of user except the logged in user
   Widget _buildUserList() {
     return StreamBuilder(
@@ -45,24 +47,23 @@ class HomePage extends StatelessWidget {
 
           //List view
           return ListView(
-            children: snapshot.data!
-                .map<Widget>(
+            children: snapshot.data!.map<Widget>(
                     (userData) => _buildUserListItem(userData, context))
                 .toList(),
           );
         });
   }
-
-  //build individual list title for user
   Widget _buildUserListItem(
       Map<String, dynamic> userData, BuildContext context) {
     return UserTile(
       onTap: () {
+        //taped on user goes to chat page
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) =>
-                    ChatPage(reciverEmail: userData["email"])));
+                    ChatPage(reciverEmail: userData["email"],
+                    )));
       },
       text: userData["email"],
     );
