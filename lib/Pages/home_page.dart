@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   //Auth and chat service
   final _chatService = ChatService();
+  final _authService = AuthService();
 
   HomePage({super.key});
   void logout() {
@@ -55,17 +56,21 @@ class HomePage extends StatelessWidget {
   }
   Widget _buildUserListItem(
       Map<String, dynamic> userData, BuildContext context) {
-    return UserTile(
-      onTap: () {
-        //taped on user goes to chat page
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) =>
-                    ChatPage(reciverEmail: userData["email"],
-                    )));
-      },
-      text: userData["email"],
-    );
+    if( userData["email"] != _authService.getCurrentUser()!.email) {
+      return UserTile(
+        text: userData["email"],
+        onTap: () {
+          //taped on user goes to chat page
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      ChatPage(reciverEmail: userData["email"],
+                      )));
+        },
+      );
+    }else{
+      return Container();
+    }
   }
 }
