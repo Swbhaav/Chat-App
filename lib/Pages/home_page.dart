@@ -48,15 +48,17 @@ class HomePage extends StatelessWidget {
 
           //List view
           return ListView(
-            children: snapshot.data!.map<Widget>(
+            children: snapshot.data!
+                .map<Widget>(
                     (userData) => _buildUserListItem(userData, context))
                 .toList(),
           );
         });
   }
+
   Widget _buildUserListItem(
       Map<String, dynamic> userData, BuildContext context) {
-    if( userData["email"] != _authService.getCurrentUser()!.email) {
+    if (userData["email"] != _authService.getCurrentUser()!.email) {
       return UserTile(
         text: userData["email"],
         onTap: () {
@@ -64,12 +66,13 @@ class HomePage extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) =>
-                      ChatPage(reciverEmail: userData["email"],
+                  builder: (context) => ChatPage(
+                        receiverEmail: userData["email"],
+                        receiverID: userData["uid"],
                       )));
         },
       );
-    }else{
+    } else {
       return Container();
     }
   }
