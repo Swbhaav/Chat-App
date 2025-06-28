@@ -23,6 +23,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home page"),
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.grey.shade500,
+        elevation: 0,
       ),
       drawer: MyDrawer(),
       body: _buildUserList(),
@@ -60,7 +63,7 @@ class HomePage extends StatelessWidget {
       Map<String, dynamic> userData, BuildContext context) {
     if (userData["email"] != _authService.getCurrentUser()!.email) {
       return UserTile(
-        text: userData["email"],
+        text:   userData["email"],
         onTap: () {
           //taped on user goes to chat page
           Navigator.push(

@@ -24,7 +24,7 @@ class MyDrawer extends StatelessWidget {
               DrawerHeader(
                 child: Icon(
                   Icons.message,
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).colorScheme.inversePrimary,
                   size: 40,
                 ),
               ),
@@ -32,8 +32,8 @@ class MyDrawer extends StatelessWidget {
               //home list title
               Padding(padding: EdgeInsets.only(left:25.0),
                 child: ListTile(
-                  title: Text("H O M E"),
-                  leading: Icon(Icons.home),
+                  title: Text("H O M E", style: TextStyle( color: Theme.of(context).colorScheme.inversePrimary),),
+                  leading: Icon(Icons.home,color: Theme.of(context).colorScheme.inversePrimary ,),
                   onTap: () {
                     Navigator.pop(context);
                   },
@@ -42,8 +42,8 @@ class MyDrawer extends StatelessWidget {
 
               Padding(padding: EdgeInsets.only(left:25.0),
                 child: ListTile(
-                  title: Text("S E T T I N G"),
-                  leading: Icon(Icons.settings),
+                  title: Text("S E T T I N G",style: TextStyle( color: Theme.of(context).colorScheme.inversePrimary),),
+                  leading: Icon(Icons.settings,color: Theme.of(context).colorScheme.inversePrimary ,),
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => SettingPage(),),);
                   },
@@ -54,8 +54,8 @@ class MyDrawer extends StatelessWidget {
 
           Padding(padding: EdgeInsets.only(left:25.0, bottom: 25.0),
             child: ListTile(
-              title: Text("L O G O U T"),
-              leading: Icon(Icons.logout_outlined),
+              title: Text("L O G O U T",style: TextStyle( color: Theme.of(context).colorScheme.inversePrimary),),
+              leading: Icon(Icons.logout_outlined,color: Theme.of(context).colorScheme.inversePrimary ,),
               onTap: logout,
             ),
           ),

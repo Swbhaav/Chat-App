@@ -42,7 +42,7 @@ class ChatService {
         senderEmail: currentUserEmail,
         receiverID: receiverID,
         message: message,
-        timestamp: timestamp);
+        timestamp: timestamp,);
 
     // construct chat room id (Sorted to ensure uniqueness)
 
